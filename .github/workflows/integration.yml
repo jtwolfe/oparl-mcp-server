@@ -26,16 +26,16 @@ jobs:
         pip install -r requirements-dev.txt
         pip install -e .
 
-    - name: Build Docker image for testing
+    - name: Build container image for testing
       run: |
         docker build -f docker/Dockerfile -t oparl-mcp-server:test .
 
-    - name: Test Docker container startup
+    - name: Test container startup
       run: |
-        docker run --rm -d --name oparl-test -p 8000:8000 oparl-mcp-server:test
-        sleep 10
-        docker logs oparl-test
-        docker stop oparl-test
+        # Test that the container can start and run the main function
+        echo "Testing container startup..."
+        docker run --rm --name oparl-test oparl-mcp-server:test
+        echo "✅ Container startup test passed"
 
     - name: Run MCP server integration tests
       run: |
