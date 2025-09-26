@@ -1,7 +1,7 @@
 """Authentication handling for OParl MCP Server."""
 
 import logging
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
 import httpx
 

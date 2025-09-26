@@ -1,7 +1,6 @@
 """Basic usage example for OParl MCP Server."""
 
 import asyncio
-import json
 
 # Add the src directory to the Python path
 import sys

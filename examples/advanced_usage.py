@@ -62,7 +62,7 @@ async def main():
         server = OParlMCPServer(custom_config)
         info = server.get_server_info()
 
-        print(f"✅ Server created successfully!")
+        print("✅ Server created successfully!")
         print(f"   Name: {info['name']}")
         print(f"   Version: {info['version']}")
         print(f"   Base URL: {info['base_url']}")

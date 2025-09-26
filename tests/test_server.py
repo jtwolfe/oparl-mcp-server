@@ -88,7 +88,6 @@ class TestOParlMCPServer:
 
     def test_run_without_initialization(self):
         """Test running server without proper initialization."""
-        config = OParlConfig()
         server = OParlMCPServer.__new__(OParlMCPServer)
         server.mcp = None
 
