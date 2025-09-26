@@ -1,0 +1,69 @@
+site_name: OParl MCP Server Dokumentation
+site_description: Model Context Protocol Server für OParl API
+site_url: https://oparl-mcp-team.github.io/oparl-mcp-server/de/
+repo_url: https://github.com/oparl-mcp-team/oparl-mcp-server
+repo_name: oparl-mcp-team/oparl-mcp-server
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Zum dunklen Modus wechseln
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Zum hellen Modus wechseln
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - search.highlight
+    - search.share
+    - toc.follow
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Startseite: index.md
+  - Erste Schritte:
+    - Installation: getting-started/installation.md
+    - Schnellstart: getting-started/quickstart.md
+    - Konfiguration: getting-started/configuration.md
+  - Benutzerhandbuch:
+    - Übersicht: user-guide/overview.md
+    - MCP-Komponenten: user-guide/mcp-components.md
+    - OParl-Objekte: user-guide/oparl-objects.md
+    - Beispiele: user-guide/examples.md
+  - API-Referenz:
+    - Server: api/server.md
+    - Konfiguration: api/configuration.md
+    - Hilfsfunktionen: api/utilities.md
+  - Entwicklung:
+    - Beitragen: development/contributing.md
+    - Tests: development/testing.md
+    - Bereitstellung: development/deployment.md
+  - Über:
+    - Lizenz: about/license.md
+    - Änderungsprotokoll: about/changelog.md

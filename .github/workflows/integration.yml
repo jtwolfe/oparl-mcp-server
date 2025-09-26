@@ -1,0 +1,87 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
+        pip install -e .
+
+    - name: Build Docker image for testing
+      run: |
+        docker build -f docker/Dockerfile -t oparl-mcp-server:test .
+
+    - name: Test Docker container startup
+      run: |
+        docker run --rm -d --name oparl-test -p 8000:8000 oparl-mcp-server:test
+        sleep 10
+        docker logs oparl-test
+        docker stop oparl-test
+
+    - name: Run MCP server integration tests
+      run: |
+        python -c "
+        import asyncio
+        from oparl_mcp import OParlMCPServer, OParlConfig
+        
+        async def test_server():
+            config = OParlConfig()
+            server = OParlMCPServer(config)
+            info = server.get_server_info()
+            assert 'name' in info
+            assert 'version' in info
+            assert 'features' in info
+            print('✅ MCP server integration test passed')
+        
+        asyncio.run(test_server())
+        "
+
+    - name: Test OpenAPI specification
+      run: |
+        python -c "
+        import json
+        with open('oparl_openapi.json', 'r') as f:
+            spec = json.load(f)
+        assert 'openapi' in spec
+        assert 'paths' in spec
+        assert 'components' in spec
+        print('✅ OpenAPI specification validation passed')
+        "
+
+    - name: Test configuration loading
+      run: |
+        python -c "
+        from oparl_mcp import OParlConfig
+        import os
+        
+        # Test default config
+        config = OParlConfig()
+        assert config.base_url == 'https://api.oparl.org'
+        
+        # Test environment variable config
+        os.environ['OPARL_BASE_URL'] = 'https://test.oparl.org'
+        os.environ['OPARL_API_KEY'] = 'test-key'
+        config = OParlConfig()
+        assert config.base_url == 'https://test.oparl.org'
+        assert config.api_key == 'test-key'
+        
+        print('✅ Configuration loading test passed')
+        "
