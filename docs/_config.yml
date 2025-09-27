@@ -11,28 +11,22 @@ url: "https://jtwolfe.github.io"
 markdown: kramdown
 highlighter: rouge
 theme: minima
+
+# GitHub Pages compatible plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
 
 # Collections for organized documentation
 collections:
-  getting-started:
+  pages:
     output: true
-    permalink: /:collection/:name/
-  user-guide:
-    output: true
-    permalink: /:collection/:name/
-  api:
-    output: true
-    permalink: /:collection/:name/
-  development:
-    output: true
-    permalink: /:collection/:name/
-  about:
-    output: true
-    permalink: /:collection/:name/
+    permalink: /:name/
 
 # Default front matter
 defaults:
@@ -40,41 +34,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "getting-started"
-    values:
       layout: "page"
-  - scope:
-      path: ""
-      type: "user-guide"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "api"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "development"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "about"
-    values:
-      layout: "page"
-
-# Navigation
-header_pages:
-  - index.md
-  - getting-started/
-  - user-guide/
-  - api/
-  - development/
-  - about/
 
 # Exclude from processing
 exclude:
