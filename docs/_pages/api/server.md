@@ -5,9 +5,16 @@ description: "OParlMCPServer class reference and configuration"
 permalink: /api/server/
 ---
 
+<div align="center">
+
 # Server API
 
-The `OParlMCPServer` class is the main entry point for the OParl MCP Server.
+<img src="../../assets/images/oparl-logo.png" alt="OParl Logo" width="50" height="50" style="margin-right: 10px;">
+<img src="../../assets/images/fastmcp-logo.png" alt="FastMCP Logo" width="100" height="40">
+
+**The `OParlMCPServer` class is the main entry point for the OParl MCP Server**
+
+</div>
 
 ## Class: OParlMCPServer
 

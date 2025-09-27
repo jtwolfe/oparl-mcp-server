@@ -1,161 +1,130 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
+
+*~
+._*
 *$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
+build/
+# Byte-compiled / optimized / DLL files
+.cache
+celerybeat.pid
+celerybeat-schedule
+# Celery stuff
+# C extensions
+*.cover
 .coverage
 .coverage.*
-.cache
-nosetests.xml
 coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
 db.sqlite3
 db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+develop-eggs/
+dist/
+# Distribution / packaging
+# Django stuff:
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
+docs/_build/
+downloads/
 .DS_Store
 .DS_Store?
-._*
-.Spotlight-V100
-.Trashes
+*.egg
+*.egg-info/
+.eggs/
+eggs/
 ehthumbs.db
-Thumbs.db
-
-# Test artifacts
-junit/
+.env
+env/
+ENV/
+env.bak/
+# Environments
+# Flask stuff:
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
 htmlcov/
-.coverage
+.hypothesis/
+# IDE
+.idea/
+#   install all needed dependencies.
+.installed.cfg
+# Installer logs
+instance/
+.ipynb_checkpoints
+# IPython
+ipython_config.py
+# Jekyll
+.jekyll-cache/
+.jekyll-metadata
+junit/
+# Jupyter Notebook
+lib/
+lib64/
+local_settings.py
+*.log
+*.manifest
+MANIFEST
+# mkdocs documentation
+*.mo
+# mypy
+.mypy_cache/
+nosetests.xml
+.nox/
+# OS
+parts/
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+pip-delete-this-directory.txt
+# pipenv
+#Pipfile.lock
+pip-log.txt
+pip-wheel-metadata/
+*.pot
+profile_default/
+# PyBuilder
+__pycache__/
+*.py[cod]
+*.py,cover
+# pyenv
+# PyInstaller
+__pypackages__/
+.pyre/
+# Pyre type checker
 .pytest_cache/
-
-# Temporary files
-*.tmp
+.Python
+.python-version
+.ropeproject
+# Rope project settings
+# SageMath parsed files
+*.sage.py
+.sass-cache/
+.scrapy
+# Scrapy stuff:
+sdist/
+share/python-wheels/
+/site
+_site/
+*.so
+*.spec
+# Sphinx documentation
+.Spotlight-V100
+.spyderproject
+# Spyder project settings
+.spyproject
+*.swo
+*.swp
+target/
 *.temp
+# Temporary files
+# Test artifacts
+Thumbs.db
+*.tmp
+.tox/
+# Translations
+.Trashes
+# Unit test / coverage reports
+#  Usually these files are written by a python script from a template
+var/
+.venv
+venv/
+venv.bak/
+.vscode/
+.webassets-cache
+wheels/

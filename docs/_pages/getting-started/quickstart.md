@@ -5,9 +5,16 @@ description: "Get up and running with OParl MCP Server in minutes"
 permalink: /getting-started/quickstart/
 ---
 
-# Quick Start
+<div align="center">
 
-Get up and running with OParl MCP Server in minutes.
+# 🚀 Quick Start
+
+<img src="../../assets/images/oparl-logo.png" alt="OParl Logo" width="60" height="60" style="margin-right: 15px;">
+<img src="../../assets/images/fastmcp-logo.png" alt="FastMCP Logo" width="120" height="50">
+
+**Get up and running with OParl MCP Server in minutes**
+
+</div>
 
 ## Installation
 

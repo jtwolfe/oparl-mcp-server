@@ -71,6 +71,10 @@ include:
   - _sass
   - assets
 
+# Custom CSS
+custom_css:
+  - assets/css/custom.css
+
 # Social links
 github_username: jtwolfe
 twitter_username: jtwolfe

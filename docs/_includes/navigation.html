@@ -1,10 +1,16 @@
 <nav class="site-nav">
   <div class="trigger">
-    <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
+    <a class="page-link" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/oparl-logo.png' | relative_url }}" alt="OParl" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+      Home
+    </a>
 
     <a class="page-link" href="{{ '/getting-started/quickstart' | relative_url }}">Getting Started</a>
 
     <a class="page-link" href="{{ '/user-guide/overview' | relative_url }}">User Guide</a>
+    <a class="page-link" href="{{ '/user-guide/oparl-api' | relative_url }}">OParl API</a>
+    <a class="page-link" href="{{ '/user-guide/fastmcp-integration' | relative_url }}">FastMCP Integration</a>
+    <a class="page-link" href="{{ '/user-guide/architecture' | relative_url }}">Architecture</a>
 
     <a class="page-link" href="{{ '/api/server' | relative_url }}">API Reference</a>
 

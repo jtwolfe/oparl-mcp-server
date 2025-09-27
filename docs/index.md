@@ -4,9 +4,44 @@ title: "OParl MCP Server"
 description: "Model Context Protocol server for accessing OParl parliamentary data APIs"
 ---
 
-# OParl MCP Server
+<div class="hero-section">
+  <div class="logo-container">
+    <img src="../assets/images/oparl-logo.png" alt="OParl Logo" width="120" height="120">
+    <img src="../assets/images/fastmcp-logo.png" alt="FastMCP Logo" width="200" height="80">
+  </div>
+  
+  <div align="center">
+    <h1 style="color: var(--text-dark); margin-bottom: 20px;">OParl MCP Server</h1>
+    <p style="font-size: 1.3em; color: var(--text-gray); max-width: 800px; margin: 0 auto 30px;">
+      <strong>A powerful Model Context Protocol (MCP) server that provides seamless access to OParl parliamentary data APIs</strong>
+    </p>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px;">
+      This server enables AI assistants and applications to interact with parliamentary information systems using a standardized interface.
+    </p>
+    
+    <div class="badge-container">
+      <a href="https://github.com/jtwolfe/oparl-mcp-server" target="_blank">
+        <img src="https://img.shields.io/github/stars/jtwolfe/oparl-mcp-server?style=social" alt="GitHub Stars">
+      </a>
+      <a href="https://github.com/jtwolfe/oparl-mcp-server/fork" target="_blank">
+        <img src="https://img.shields.io/github/forks/jtwolfe/oparl-mcp-server?style=social" alt="GitHub Forks">
+      </a>
+      <a href="https://github.com/jtwolfe/oparl-mcp-server/blob/main/LICENSE" target="_blank">
+        <img src="https://img.shields.io/github/license/jtwolfe/oparl-mcp-server" alt="License">
+      </a>
+      <a href="https://www.python.org/downloads/" target="_blank">
+        <img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python 3.11+">
+      </a>
+      <a href="https://modelcontextprotocol.io" target="_blank">
+        <img src="https://img.shields.io/badge/MCP-Compatible-green.svg" alt="MCP Compatible">
+      </a>
+    </div>
+  </div>
+</div>
 
-A powerful Model Context Protocol (MCP) server that provides seamless access to OParl parliamentary data APIs. This server enables AI assistants and applications to interact with parliamentary information systems using a standardized interface.
+<div class="status-warning">
+  <strong>⚠️ Project Status:</strong> This project is currently in development and requires additional validation and testing. While the core functionality is implemented, it has not been thoroughly tested in production environments. Please use with caution and report any issues you encounter.
+</div>
 
 ## 🚀 Quick Start
 
@@ -22,20 +57,65 @@ python -m oparl_mcp.server
 
 ## ✨ Features
 
-- **🔌 MCP Integration**: Full Model Context Protocol compliance
-- **🏛️ OParl Support**: Access to all OParl 1.1 object types
-- **🌐 Multi-Implementation**: Works with various OParl implementations
-- **🔐 Authentication**: Support for API key authentication
-- **📊 Rich Data**: Parliamentary meetings, documents, organizations, and more
-- **🔍 Search**: Advanced search and filtering capabilities
-- **🐳 Docker Ready**: Containerized deployment options
+<div class="feature-grid">
+  <div class="feature-card">
+    <h3>🔌 MCP Integration</h3>
+    <p>Full Model Context Protocol compliance</p>
+  </div>
+  <div class="feature-card">
+    <h3>🏛️ OParl Support</h3>
+    <p>Access to all OParl 1.1 object types</p>
+  </div>
+  <div class="feature-card">
+    <h3>🌐 Multi-Implementation</h3>
+    <p>Works with various OParl implementations</p>
+  </div>
+  <div class="feature-card">
+    <h3>🔐 Authentication</h3>
+    <p>Support for API key authentication</p>
+  </div>
+  <div class="feature-card">
+    <h3>📊 Rich Data</h3>
+    <p>Parliamentary meetings, documents, organizations, and more</p>
+  </div>
+  <div class="feature-card">
+    <h3>🔍 Search</h3>
+    <p>Advanced search and filtering capabilities</p>
+  </div>
+  <div class="feature-card">
+    <h3>🐳 Docker Ready</h3>
+    <p>Containerized deployment options</p>
+  </div>
+  <div class="feature-card">
+    <h3>🧪 Testing</h3>
+    <p>Comprehensive test suite included</p>
+  </div>
+</div>
 
 ## 📚 Documentation
 
-- **[Getting Started]({{ '/getting-started/quickstart' | relative_url }})** - Quick setup and basic usage
-- **[User Guide]({{ '/user-guide/overview' | relative_url }})** - Comprehensive usage documentation
-- **[API Reference]({{ '/api/server' | relative_url }})** - Complete API documentation
-- **[Development]({{ '/development/contributing' | relative_url }})** - Contributing and development guide
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+  <div class="feature-card">
+    <h3>🚀 Getting Started</h3>
+    <p>Quick setup and basic usage</p>
+    <a href="{{ '/getting-started/quickstart' | relative_url }}" class="btn">Get Started</a>
+  </div>
+  <div class="feature-card">
+    <h3>📖 User Guide</h3>
+    <p>Comprehensive usage documentation</p>
+    <a href="{{ '/user-guide/overview' | relative_url }}" class="btn btn-secondary">Read Guide</a>
+  </div>
+  <div class="feature-card">
+    <h3>🔧 API Reference</h3>
+    <p>Complete API documentation</p>
+    <a href="{{ '/api/server' | relative_url }}" class="btn btn-secondary">View API</a>
+  </div>
+  <div class="feature-card">
+    <h3>🛠️ Development</h3>
+    <p>Contributing and development guide</p>
+    <a href="{{ '/development/contributing' | relative_url }}" class="btn btn-secondary">Contribute</a>
+  </div>
+</div>
 
 ## 🏛️ Supported OParl Objects
 
