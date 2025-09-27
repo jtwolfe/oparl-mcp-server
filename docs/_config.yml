@@ -1,0 +1,89 @@
+# Jekyll Configuration for OParl MCP Server Documentation
+# Configured for GitHub Pages subdomain: jtwolfe.github.io/oparl-mcp-server
+
+# Site settings
+title: "OParl MCP Server"
+description: "Model Context Protocol server for accessing OParl parliamentary data APIs"
+baseurl: "/oparl-mcp-server"  # GitHub Pages subdomain path
+url: "https://jtwolfe.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# GitHub Pages compatible plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+
+# Collections for organized documentation
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .git/
+  - .github/
+  - .pre-commit-config.yaml
+  - .flake8
+  - .secrets.baseline
+  - src/
+  - tests/
+  - examples/
+  - scripts/
+  - docker/
+  - requirements*.txt
+  - pyproject.toml
+  - test_*.py
+  - oparl_openapi.json
+
+# Include additional files
+include:
+  - _pages
+  - _layouts
+  - _includes
+  - _sass
+  - assets
+
+# Social links
+github_username: jtwolfe
+twitter_username: jtwolfe
+
+# Build settings for GitHub Pages
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# SEO settings
+seo:
+  type: "WebSite"
+  name: "OParl MCP Server"
+  description: "Model Context Protocol server for accessing OParl parliamentary data APIs"
+  url: "https://jtwolfe.github.io/oparl-mcp-server"
+  image: "/oparl-mcp-server/assets/logo.png"

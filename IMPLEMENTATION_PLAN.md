@@ -63,14 +63,14 @@ Since OParl doesn't provide an official OpenAPI specification, we need to create
    ```python
    from fastmcp import FastMCP
    import httpx
-   
+
    # Load OpenAPI spec
    with open('oparl-openapi.json') as f:
        openapi_spec = json.load(f)
-   
+
    # Create HTTP client
    client = httpx.AsyncClient(base_url="https://api.oparl.org")
-   
+
    # Create MCP server
    mcp = FastMCP.from_openapi(
        openapi_spec=openapi_spec,
@@ -88,32 +88,32 @@ Since OParl doesn't provide an official OpenAPI specification, we need to create
 3. **Custom Route Maps**
    ```python
    from fastmcp.server.openapi import RouteMap, MCPType
-   
+
    route_maps = [
        # Resource templates for parameterized GET requests
        RouteMap(
-           methods=["GET"], 
-           pattern=r".*\{.*\}.*", 
+           methods=["GET"],
+           pattern=r".*\{.*\}.*",
            mcp_type=MCPType.RESOURCE_TEMPLATE,
            mcp_tags={"oparl", "data", "parameterized"}
        ),
        # Resources for simple GET requests
        RouteMap(
-           methods=["GET"], 
-           pattern=r".*", 
+           methods=["GET"],
+           pattern=r".*",
            mcp_type=MCPType.RESOURCE,
            mcp_tags={"oparl", "data", "read-only"}
        ),
        # Tools for write operations
        RouteMap(
-           methods=["POST", "PUT", "DELETE"], 
-           pattern=r".*", 
+           methods=["POST", "PUT", "DELETE"],
+           pattern=r".*",
            mcp_type=MCPType.TOOL,
            mcp_tags={"oparl", "action", "write"}
        ),
        # Exclude admin endpoints
        RouteMap(
-           pattern=r".*/admin/.*", 
+           pattern=r".*/admin/.*",
            mcp_type=MCPType.EXCLUDE
        ),
    ]

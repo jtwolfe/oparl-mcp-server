@@ -1,0 +1,10 @@
+# Jekyll dependencies for GitHub Pages
+source "https://rubygems.org"
+
+# Use GitHub Pages gem which includes Jekyll and all plugins
+gem "github-pages", "~> 228"
+
+# Development dependencies
+group :development do
+  gem "webrick", "~> 1.7"
+end
