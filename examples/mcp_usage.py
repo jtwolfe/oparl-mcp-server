@@ -8,7 +8,7 @@ from pathlib import Path
 # Add the src directory to the Python path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from oparl_mcp import OParlConfig, OParlMCPServer
+# from oparl_mcp import OParlConfig, OParlMCPServer
 
 
 async def demonstrate_mcp_resources():
@@ -16,10 +16,9 @@ async def demonstrate_mcp_resources():
     print("🔍 MCP Resource Access Examples")
     print("=" * 50)
 
-    # Create server configuration
-    config = OParlConfig(base_url="https://api.oparl.org", server_name="OParl MCP Demo")
-
-    server = OParlMCPServer(config)
+    # Note: In a real MCP client, you would create and use the server
+    # config = OParlConfig(base_url="https://api.oparl.org", server_name="OParl MCP Demo")
+    # server = OParlMCPServer(config)
 
     print("📋 Available MCP Resources:")
     print("   • oparl_system - System information")
@@ -234,7 +233,7 @@ async def demonstrate_error_handling():
     for error_type, info in error_types.items():
         print(f"❌ {error_type}")
         print(f"   Description: {info['description']}")
-        print(f"   MCP Response:")
+        print("   MCP Response:")
         print(f"   {json.dumps(info['mcp_response'], indent=6)}")
         print()
 
