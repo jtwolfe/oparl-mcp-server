@@ -5,7 +5,7 @@
 ### 1. Docker Image Not Found Error
 **Problem**: Trivy was trying to scan `ghcr.io/jtwolfe/oparl-mcp-server:608543f5486723fa72aeaba30e0268918c24f336` but the image didn't exist because it's only pushed on non-PR events.
 
-**Solution**: 
+**Solution**:
 - Added conditional execution to Trivy scan: `if: github.event_name != 'pull_request'`
 - Added conditional execution to SARIF upload: `if: always() && github.event_name != 'pull_request'`
 

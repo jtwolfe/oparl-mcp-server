@@ -1,48 +1,61 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.6.0
     hooks:
       - id: trailing-whitespace
+        stages: [pre-commit]
       - id: end-of-file-fixer
+        stages: [pre-commit]
       - id: check-yaml
+        stages: [pre-commit]
       - id: check-added-large-files
+        stages: [pre-commit]
       - id: check-merge-conflict
+        stages: [pre-commit]
       - id: debug-statements
+        stages: [pre-commit]
 
   - repo: https://github.com/psf/black
-    rev: 23.12.1
+    rev: 24.10.0
     hooks:
       - id: black
         language_version: python3
+        stages: [pre-commit]
 
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
         args: ["--profile", "black"]
+        stages: [pre-commit]
 
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.1.1
     hooks:
       - id: flake8
-        args: [--max-line-length=88, --extend-ignore=E203]
+        args: ["--max-line-length=88", "--extend-ignore=E203,W503,E501"]
+        exclude: ^(tests/|test_.*\.py$|scripts/|examples/)
+        stages: [pre-commit]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
+    rev: v1.13.0
     hooks:
       - id: mypy
-        additional_dependencies: [types-all]
-        args: [--ignore-missing-imports]
+        args: ["--ignore-missing-imports"]
+        exclude: ^(tests/|test_.*\.py$|scripts/|examples/)
+        stages: [pre-commit]
 
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
+    rev: 1.7.8
     hooks:
       - id: bandit
-        args: [-r, src/]
-        exclude: tests/
+        args: ["-r", "src/"]
+        exclude: ^(tests/|test_.*\.py$)
+        stages: [pre-commit]
 
   - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.4.0
+    rev: v1.5.0
     hooks:
       - id: detect-secrets
         args: ['--baseline', '.secrets.baseline']
+        stages: [pre-commit]

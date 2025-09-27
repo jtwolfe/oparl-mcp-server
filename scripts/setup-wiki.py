@@ -12,17 +12,15 @@ Usage:
     python scripts/setup-wiki.py
 """
 
-import os
-import json
 from pathlib import Path
-from typing import Dict, List
+
 
 def create_wiki_structure():
     """Create wiki directory structure and content."""
-    
+
     wiki_dir = Path("wiki")
     wiki_dir.mkdir(exist_ok=True)
-    
+
     # Wiki structure
     wiki_pages = {
         "Home.md": "docs/en/index.md",
@@ -33,7 +31,6 @@ def create_wiki_structure():
         "Examples.md": "docs/en/user-guide/examples.md",
         "Contributing.md": "docs/en/development/contributing.md",
         "License.md": "docs/en/about/license.md",
-        
         # German pages
         "Startseite.md": "docs/de/index.md",
         "Erste-Schritte.md": "docs/de/getting-started/installation.md",
@@ -44,24 +41,25 @@ def create_wiki_structure():
         "Beitragen.md": "docs/de/development/contributing.md",
         "Lizenz.md": "docs/de/about/license.md",
     }
-    
+
     # Create wiki pages
     for wiki_file, source_file in wiki_pages.items():
         if Path(source_file).exists():
-            with open(source_file, 'r', encoding='utf-8') as f:
+            with open(source_file, "r", encoding="utf-8") as f:
                 content = f.read()
-            
+
             # Convert markdown links for wiki
             content = convert_links_for_wiki(content)
-            
-            with open(wiki_dir / wiki_file, 'w', encoding='utf-8') as f:
+
+            with open(wiki_dir / wiki_file, "w", encoding="utf-8") as f:
                 f.write(content)
-    
+
     # Create wiki setup instructions
     create_wiki_instructions(wiki_dir)
-    
+
     print(f"✅ Wiki content generated in {wiki_dir}/")
     print("📝 Manual setup required - see wiki-setup-instructions.md")
+
 
 def convert_links_for_wiki(content: str) -> str:
     """Convert markdown links to wiki format."""
@@ -73,9 +71,10 @@ def convert_links_for_wiki(content: str) -> str:
     content = content.replace(".md)", ")")
     return content
 
+
 def create_wiki_instructions(wiki_dir: Path):
     """Create instructions for manual wiki setup."""
-    
+
     instructions = """# GitHub Wiki Setup Instructions
 
 ## Overview
@@ -134,20 +133,21 @@ Since GitHub Wiki cannot be automated directly, consider these alternatives:
 
 The following files have been generated for manual upload:
 """
-    
+
     # List generated files
     for file in sorted(wiki_dir.glob("*.md")):
         if file.name != "wiki-setup-instructions.md":
             instructions += f"- `{file.name}`\n"
-    
-    with open(wiki_dir / "wiki-setup-instructions.md", 'w', encoding='utf-8') as f:
+
+    with open(wiki_dir / "wiki-setup-instructions.md", "w", encoding="utf-8") as f:
         f.write(instructions)
+
 
 def create_github_pages_alternative():
     """Create GitHub Pages as alternative to wiki."""
-    
+
     pages_dir = Path("docs")
-    
+
     # Create GitHub Pages configuration
     pages_config = {
         "name": "OParl MCP Server Documentation",
@@ -158,20 +158,21 @@ def create_github_pages_alternative():
         "highlighter": "rouge",
         "theme": "minima",
         "plugins": ["jekyll-feed", "jekyll-sitemap"],
-        "exclude": ["node_modules", "Gemfile.lock", "README.md"]
+        "exclude": ["node_modules", "Gemfile.lock", "README.md"],
     }
-    
-    with open(pages_dir / "_config.yml", 'w', encoding='utf-8') as f:
+
+    with open(pages_dir / "_config.yml", "w", encoding="utf-8") as f:
         f.write("---\n")
         for key, value in pages_config.items():
             if isinstance(value, str):
-                f.write(f"{key}: \"{value}\"\n")
+                f.write(f'{key}: "{value}"\n')
             else:
                 f.write(f"{key}: {value}\n")
         f.write("---\n")
-    
+
     print("✅ GitHub Pages configuration created")
     print("📝 Enable GitHub Pages in repository settings")
+
 
 if __name__ == "__main__":
     print("🚀 Setting up GitHub Wiki content...")

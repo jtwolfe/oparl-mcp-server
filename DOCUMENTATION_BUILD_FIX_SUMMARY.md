@@ -66,7 +66,7 @@ pip install mkdocs-mermaid2-plugin
 
 #### **English Documentation:**
 - ✅ Installation guide
-- ✅ Quick start guide  
+- ✅ Quick start guide
 - ✅ Configuration guide
 - ✅ User guide overview
 - ✅ MCP components documentation
@@ -111,7 +111,7 @@ INFO - Documentation built in 1.16 seconds
 - **Warnings**: 0 critical warnings
 - **Files Generated**: Complete static site with all assets
 
-### **✅ German Documentation**  
+### **✅ German Documentation**
 - **Build Status**: ✅ **SUCCESS**
 - **Build Time**: 0.94 seconds
 - **Warnings**: 0 critical warnings (only missing optional files)

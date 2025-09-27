@@ -1,0 +1,129 @@
+# Jekyll Configuration for OParl MCP Server Documentation
+# Configured for GitHub Pages subdomain: jtwolfe.github.io/oparl-mcp-server
+
+# Site settings
+title: "OParl MCP Server"
+description: "Model Context Protocol server for accessing OParl parliamentary data APIs"
+baseurl: "/oparl-mcp-server"  # GitHub Pages subdomain path
+url: "https://jtwolfe.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections for organized documentation
+collections:
+  getting-started:
+    output: true
+    permalink: /:collection/:name/
+  user-guide:
+    output: true
+    permalink: /:collection/:name/
+  api:
+    output: true
+    permalink: /:collection/:name/
+  development:
+    output: true
+    permalink: /:collection/:name/
+  about:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "getting-started"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "user-guide"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "api"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "development"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "about"
+    values:
+      layout: "page"
+
+# Navigation
+header_pages:
+  - index.md
+  - getting-started/
+  - user-guide/
+  - api/
+  - development/
+  - about/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .git/
+  - .github/
+  - .pre-commit-config.yaml
+  - .flake8
+  - .secrets.baseline
+  - src/
+  - tests/
+  - examples/
+  - scripts/
+  - docker/
+  - requirements*.txt
+  - pyproject.toml
+  - test_*.py
+  - oparl_openapi.json
+
+# Include additional files
+include:
+  - _pages
+  - _layouts
+  - _includes
+  - _sass
+  - assets
+
+# Social links
+github_username: jtwolfe
+twitter_username: jtwolfe
+
+# Build settings for GitHub Pages
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# SEO settings
+seo:
+  type: "WebSite"
+  name: "OParl MCP Server"
+  description: "Model Context Protocol server for accessing OParl parliamentary data APIs"
+  url: "https://jtwolfe.github.io/oparl-mcp-server"
+  image: "/oparl-mcp-server/assets/logo.png"

@@ -74,7 +74,7 @@ class OParlAuthenticator:
                 response = await client.get(
                     f"{base_url}/system", headers=self.get_auth_headers(), timeout=10.0
                 )
-                return response.status_code == 200
+                return bool(response.status_code == 200)
         except Exception as e:
             logger.error(f"Failed to validate credentials: {e}")
             return False

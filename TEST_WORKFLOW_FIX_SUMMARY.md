@@ -86,7 +86,7 @@ pytest-cov>=4.0.0
 ```
 ================================================================================= test session starts =================================================================================
 platform linux -- Python 3.13.7, pytest-8.4.2, pluggy-1.6.0
-collected 10 items                                                                                                                                                                    
+collected 10 items
 
 tests/test_config.py ....                                                                                                                                                       [ 40%]
 tests/test_server.py ......                                                                                                                                                     [100%]

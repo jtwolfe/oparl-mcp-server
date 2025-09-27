@@ -42,7 +42,7 @@ jobs:
         python -c "
         import asyncio
         from oparl_mcp import OParlMCPServer, OParlConfig
-        
+
         async def test_server():
             config = OParlConfig()
             server = OParlMCPServer(config)
@@ -51,7 +51,7 @@ jobs:
             assert 'version' in info
             assert 'features' in info
             print('✅ MCP server integration test passed')
-        
+
         asyncio.run(test_server())
         "
 
@@ -72,17 +72,17 @@ jobs:
         python -c "
         from oparl_mcp import OParlConfig
         import os
-        
+
         # Test default config
         config = OParlConfig()
         assert config.base_url == 'https://api.oparl.org'
-        
+
         # Test environment variable config
         os.environ['OPARL_BASE_URL'] = 'https://test.oparl.org'
         os.environ['OPARL_API_KEY'] = 'test-key'
         config = OParlConfig()
         assert config.base_url == 'https://test.oparl.org'
         assert config.api_key == 'test-key'
-        
+
         print('✅ Configuration loading test passed')
         "
