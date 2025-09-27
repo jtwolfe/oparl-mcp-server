@@ -46,7 +46,7 @@ jobs:
     - name: Run flake8 linting
       run: flake8 src/ tests/ examples/
 
-    - name: Run pre-commit hooks
+    - name: Run pre-commit hooks (check only)
       run: |
         pip install pre-commit
-        pre-commit run --all-files
+        pre-commit run --all-files --show-diff-on-failure

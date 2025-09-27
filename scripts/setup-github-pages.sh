@@ -76,9 +76,9 @@ if [[ $REPO_URL == *"github.com"* ]]; then
     elif [[ $REPO_URL == *"https://github.com/"* ]]; then
         REPO_PATH=${REPO_URL#https://github.com/}
     fi
-    
+
     REPO_PATH=${REPO_PATH%.git}
-    
+
     echo "🔗 Repository Information:"
     echo "   Repository: $REPO_PATH"
     echo "   Documentation URL: https://${REPO_PATH%/*}.github.io/${REPO_PATH##*/}"
