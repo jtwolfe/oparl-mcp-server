@@ -9,7 +9,7 @@ description: "Model Context Protocol server for accessing OParl parliamentary da
     <img src="../assets/images/oparl-logo.png" alt="OParl Logo" width="120" height="120">
     <img src="../assets/images/fastmcp-logo.png" alt="FastMCP Logo" width="200" height="80">
   </div>
-  
+
   <div align="center">
     <h1 style="color: var(--text-dark); margin-bottom: 20px;">OParl MCP Server</h1>
     <p style="font-size: 1.3em; color: var(--text-gray); max-width: 800px; margin: 0 auto 30px;">
@@ -18,7 +18,7 @@ description: "Model Context Protocol server for accessing OParl parliamentary da
     <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto 30px;">
       This server enables AI assistants and applications to interact with parliamentary information systems using a standardized interface.
     </p>
-    
+
     <div class="badge-container">
       <a href="https://github.com/jtwolfe/oparl-mcp-server" target="_blank">
         <img src="https://img.shields.io/github/stars/jtwolfe/oparl-mcp-server?style=social" alt="GitHub Stars">

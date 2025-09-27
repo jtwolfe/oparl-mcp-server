@@ -26,17 +26,17 @@ graph TB
         AI[AI Model/Assistant]
         MCP_CLIENT[MCP Client]
     end
-    
+
     subgraph "MCP Layer"
         MCP_SERVER[OParl MCP Server]
         FASTMCP[FastMCP Framework]
     end
-    
+
     subgraph "API Layer"
         HTTP_CLIENT[HTTP Client]
         AUTH[Authentication]
     end
-    
+
     subgraph "Data Layer"
         OPARL_API[OParl API]
         MUNICH[Munich OParl]
@@ -44,14 +44,14 @@ graph TB
         HAMBURG[Hamburg OParl]
         GENERIC[Generic OParl]
     end
-    
+
     AI --> MCP_CLIENT
     MCP_CLIENT --> MCP_SERVER
     MCP_SERVER --> FASTMCP
     FASTMCP --> HTTP_CLIENT
     HTTP_CLIENT --> AUTH
     AUTH --> OPARL_API
-    
+
     OPARL_API --> MUNICH
     OPARL_API --> COLOGNE
     OPARL_API --> HAMBURG
@@ -106,7 +106,7 @@ sequenceDiagram
     participant Server as MCP Server
     participant FastMCP as FastMCP
     participant API as OParl API
-    
+
     AI->>MCP: Query parliamentary data
     MCP->>Server: MCP request
     Server->>FastMCP: Route to appropriate handler
@@ -124,7 +124,7 @@ sequenceDiagram
     participant MCP as MCP Client
     participant Server as MCP Server
     participant FastMCP as FastMCP
-    
+
     AI->>MCP: List available resources
     MCP->>Server: list_resources()
     Server->>FastMCP: Get resource catalog
@@ -145,14 +145,14 @@ graph LR
         R4[Person List]
         R5[Paper List]
     end
-    
+
     subgraph "MCP Resource Templates"
         RT1[Meeting Details]
         RT2[Person Profile]
         RT3[Paper Content]
         RT4[Organization Info]
     end
-    
+
     subgraph "MCP Tools"
         T1[Search]
         T2[Filter]
@@ -168,7 +168,7 @@ flowchart TD
     B -->|/meeting| D[Resource]
     B -->|/search| E[Tool]
     B -->|/admin/*| F[Exclude]
-    
+
     C --> G[Individual Meeting Data]
     D --> H[Meeting Collection]
     E --> I[Search Functionality]
@@ -214,7 +214,7 @@ sequenceDiagram
     participant Server as MCP Server
     participant Auth as Auth Module
     participant API as OParl API
-    
+
     Client->>Server: Request with credentials
     Server->>Auth: Validate credentials
     Auth->>API: Test authentication
@@ -240,13 +240,13 @@ graph TB
         L2[HTTP Cache]
         L3[API Cache]
     end
-    
+
     subgraph "Cache Policies"
         P1[TTL: 1 hour]
         P2[ETag support]
         P3[Conditional requests]
     end
-    
+
     L1 --> P1
     L2 --> P2
     L3 --> P3
@@ -273,17 +273,17 @@ graph TB
         DEPS[Python Dependencies]
         CONFIG[Configuration]
     end
-    
+
     subgraph "Host System"
         DOCKER[Docker Engine]
         NETWORK[Network Interface]
     end
-    
+
     subgraph "External Services"
         OPARL[OParl APIs]
         MCP_CLIENT[MCP Clients]
     end
-    
+
     APP --> DEPS
     APP --> CONFIG
     DOCKER --> APP
@@ -307,7 +307,7 @@ flowchart TD
     C --> D[MCP Server]
     D --> E[MCP Client]
     E --> F[AI Model]
-    
+
     B --> G[Log Error]
     C --> H[Transform Error]
     D --> I[Add Context]

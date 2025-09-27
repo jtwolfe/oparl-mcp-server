@@ -188,7 +188,7 @@ async def main():
             # List all meetings
             meetings = await session.list_resources()
             print(f"Found {len(meetings)} resources")
-            
+
             # Get specific meeting
             meeting = await session.read_resource("oparl_meeting_123")
             print(f"Meeting: {meeting['name']}")

@@ -163,11 +163,11 @@ FastMCP handles authentication through the HTTP client:
 def _create_http_client(self) -> httpx.AsyncClient:
     """Create HTTP client for OParl API."""
     headers = {}
-    
+
     # Add authentication if API key is provided
     if self.config.api_key:
         headers["Authorization"] = f"Bearer {self.config.api_key}"
-    
+
     return httpx.AsyncClient(
         base_url=self.config.base_url,
         headers=headers,
@@ -287,7 +287,7 @@ async def main():
             # List all meetings
             meetings = await session.list_resources()
             print(f"Found {len(meetings)} resources")
-            
+
             # Get specific meeting
             meeting = await session.read_resource(
                 "oparl_meeting_123"
